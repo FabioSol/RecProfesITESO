@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher review</title>
+    <!-- Bootstrap CSS CDN link -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="../static/css/styles.css" rel="stylesheet">
+</head>
+<body data-theme="dark">
+
+<!-- Top bar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <!-- Brand/Logo -->
+        <a class="navbar-brand title" href="#">
+        <img id="logoImg" src="{{ url_for('static', filename='img/ITESO_logo_dark.png') }}" alt="ITESO Logo" style="width: 40px; height: auto;">
+        RECOMENDACIÓNES DE PROFES
+        </a>
+
+        <!-- Search bar -->
+        <form class="form-inline my-2 my-lg-0 mx-auto" onsubmit="return false;">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-transparent border-0"><i class="fas fa-search"></i></span>
+                </div>
+                <input class="form-control mr-sm-2" id="searchInput" type="search" placeholder="Search" aria-label="Search">
+            </div>
+        </form>
+
+        <!-- Right-aligned items -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <!-- Notifications dropdown -->
+                <a class="nav-link dropdown-toggle" href="#" id="notificationsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-bell"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="notificationsDropdown">
+                    <!-- Notification items go here -->
+                    {% for notification in data.user.notifications %}
+                    <a class="dropdown-item" href={{ notification.ref }}>
+                        <span class="notification-dot"></span>
+                        {{ notification.message }}
+                    </a>
+                    {% endfor %}
+                    <!-- Add more notification items dynamically -->
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user"></i> <!-- User icon -->
+                    <span class="d-none d-lg-inline ml-2">{{ data.user.name }}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-user-circle"></i> Profile
+                    </a>
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                    <div class="dropdown-divider divider-line"></div>
+                    <a class="dropdown-item" href="#">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- Main content -->
+<div class="container mt-4">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-3 sidebar d-flex flex-column">
+            <!-- Sections -->
+            <div class="mb-4">
+                <a href="#" class="d-block">
+                    <i class="fas fa-home"></i><span class="ml-2">Home</span>
+                </a>
+            </div>
+            <div class="mb-4">
+                <a href="#" class="d-block">
+                    <i class="fas fa-user"></i><span class="ml-2">Profile</span>
+                </a>
+            </div>
+            <div class="mb-4">
+                <a href="#" class="d-block">
+                    <i class="fas fa-book"></i><span class="ml-2">Courses</span>
+                </a>
+            </div>
+
+            <!-- Toggle Switch with Sun and Moon icons -->
+            <div class="mt-auto">
+                <div class="d-flex justify-content-between align-items-center">
+                    <i class="far fa-moon"></i>
+                    <div class="custom-control custom-switch ">
+                        <input type="checkbox" class="custom-control-input" id="themeSwitch">
+                        <label class="custom-control-label" for="themeSwitch"></label>
+                    </div>
+                    <i class="far fa-sun"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Tweets/Content -->
+        <div class="col-lg-9">
+            <!-- Individual tweet containers -->
+            {% for content_item in data.content %}
+            <div class="card mb-3 custom-card">
+                <div class="card-body">
+                    <div>
+                        <h5 class="card-title">{{ content_item.Teacher }}</h5>
+
+                        <div class="rating-icons ml-2">
+                            {% for _ in range(content_item.rating | int) %}
+                                <img src="{{ url_for('static', filename='img/rate_1.ico') }}" alt="Complete Rating" style="height: 32px;">
+                            {% endfor %}
+                            {% set remainder = content_item.rating % 1 %}
+                            {% if remainder >= 0.75 %}
+                                <img src="{{ url_for('static', filename='img/rate_34.ico') }}" alt="Three Fourths Rating" style="height: 32px;">
+                            {% elif remainder >= 0.5 %}
+                                <img src="{{ url_for('static', filename='img/rate_12.ico') }}" alt="Half Rating" style="height: 32px;">
+                            {% elif remainder >= 0.25 %}
+                                <img src="{{ url_for('static', filename='img/rate_14.ico') }}" alt="One Fourth Rating" style="height: 32px;">
+                            {% endif %}
+                        </div>
+
+                        <h6 class="card-subtitle mb-2 text-muted">{{ content_item.author }}</h6>
+
+                        <hr> <!-- Horizontal line to separate sections -->
+                        <div class="content-section">
+                            <p class="card-text">{{ content_item.comment }}</p>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="d-flex justify-content-start">
+                        <div class="mr-3">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>{{ content_item['up-votes'] }}</span>
+                        </div>
+                        <div class="mr-3">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>{{ content_item['down-votes'] }}</span>
+                        </div>
+                    </div>
+                    <div class="text-muted text-right">
+                        {{ content_item.timestamp }}
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS CDN links -->
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- ... (other imports) -->
+<script src="../static/js/theme_manager.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+/* Importing purple color palette */
+@import url('themes/blue-theme.css');
+
+/* Apply theme colors to specific elements */
+body {
+    background-color: var(--neutral-dark);
+    color: var(--neutral-light);
+}
+
+.title{
+    color: var(--neutral-light)
+}
+
+/* Navbar */
+.navbar {
+    position: sticky;
+
+    top: 0;
+    z-index: 1000;
+    background-color: var(--darkest); /* Change navbar background color */
+    color: var(--neutral-light); /* Change text color in navbar */
+}
+
+/* Navbar links */
+.navbar-nav .nav-link {
+    color: var(--neutral-light); /* Change text color in navbar links */
+}
+
+/* Active/Hover navbar links */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--neutral-light); /* Change text color on hover/active */
+    background-color: var(--neutral-dark); /* Change background color on hover/active */
+}
+
+/* Search bar */
+#searchInput {
+    border-radius: 10px; /* Set border radius to make corners round */
+    background-color: var(--neutral-dark); /* Set dark background color */
+    color: var(--neutral-light); /* Set text color */
+    border: none; /* Remove default border */
+    padding: 8px 12px; /* Adjust padding for input field */
+    transition: background-color 0.3s ease; /* Add transition for background color change */
+}
+
+/* Change background color on input focus */
+#searchInput:focus {
+    background-color: var(--color-1); /* Change background color on focus */
+    color: var(--neutral-dark); /* Change text color on focus */
+}
+
+
+/* Sidebar */
+.sidebar {
+    position: sticky;
+    top: 50px; /* Adjust as needed */
+    height: 10vh; /* Set height if needed */
+    overflow-y: auto;
+    background-color: var(--neutral-dark); /* Change sidebar background color */
+    color: var(--neutral-light); /* Change text color in sidebar */
+}
+
+/* Cards */
+.card {
+    background-color: var(--neutral-dark); /* Change card background color */
+    color: var(--neutral-light); /* Change text color in cards */
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--neutral-dark); /* Change primary button color */
+    border-color: var(--neutral-light); /* Change primary button border color */
+    color: var(--neutral-light); /* Change text color in primary button */
+}
+
+/* Dropdown menu */
+
+.dropdown-menu {
+    background-color: var(--neutral-dark); /* Change dropdown menu background color */
+    color: var(--neutral-light); /* Change text color in dropdown menu */
+}
+
+/* Dropdown menu items */
+.dropdown-menu .dropdown-item {
+    color: var(--neutral-light); /* Change text color in dropdown items */
+}
+
+/* Hover effect on dropdown items */
+.dropdown-menu .dropdown-item:hover {
+    color: var(--neutral-dark); /* Change text color on hover */
+    background-color: var(--color-1); /* Change background color on hover */
+}
+
+
+.sidebar {
+    height: 95vh;
+    border-radius: 10px;
+    background-color: var(--color-1); /* Set background color */
+    padding: 20px; /* Add padding for content */
+    color: var(--neutral-light);
+}
+
+.sidebar a {
+    color: var(--neutral-light); /* Change text color in sidebar links */
+}
+
+/* Sections' styling */
+.sidebar div {
+    padding: 10px 0; /* Adjust vertical padding */
+    border-bottom: 1px solid var(--neutral-light); /* Add a border between sections */
+}
+
+/* Style the last section (Courses) to remove the bottom border */
+.sidebar div:last-child {
+    border-bottom: none;
+}
+
+.card {
+    /* Add other styling properties for the card */
+    background-color: var(--color-1);
+    color: var(--neutral-light);
+    border: 1px solid var(--color-1);
+    border-radius: 0.5rem;
+    padding: .1rem;
+    margin-bottom: .1rem;
+    /* Add more styles as needed */
+}
+
+.divider-line {
+    border-top: 1px solid var(--neutral-light); /* Change color and styles as needed */
+}
+
+.notification-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-1); /* Change color as desired */
+    border-radius: 50%; /* Ensures the dot is round */
+    margin-right: 5px; /* Adjust margin as needed */
+}

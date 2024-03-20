@@ -1,0 +1,20 @@
+
+/* Dark mode */
+:root[data-theme='dark'] {
+    --darkest: #131314;
+    --neutral-dark: #182236;
+    --neutral-light: #fff;
+    --color-1: #005791;
+
+}
+
+/* Light mode */
+:root[data-theme='light'] {
+    --darkest: #fff;
+    --neutral-dark: #e1ebf7;
+    --neutral-light: #28262C;
+    --color-1: #7ac8f5;
+}
+
+/* Rest of your CSS */
+/* Use CSS variables to define colors for different elements */

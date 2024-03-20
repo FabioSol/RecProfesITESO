@@ -1,0 +1,128 @@
+{
+  "user": {
+    "id": 1,
+    "username": "example_user",
+    "name": "Fabio Solorzano Flores",
+    "email": "john@example.com",
+    "role": "student",
+    "career": "Financial Engineering",
+    "notifications": [
+      {
+        "id": 1,
+        "message": "Juan Perez up-voted your comment",
+        "timestamp": "2024-01-09T12:00:00Z",
+        "ref": ""
+      },
+      {
+        "id": 2,
+        "message": "Anonymous User down-voted your comment",
+        "timestamp": "2024-01-10T09:00:00Z",
+        "ref": ""
+      }
+    ]
+  },
+  "content": [
+    {
+      "id": 1,
+      "author": "Anonymous User",
+      "Teacher": "Pedrito Sola",
+      "rating": 4.5,
+      "comment": "Le mama la mayonesa McCormick.",
+      "up-votes": 4,
+      "down-votes": 1,
+      "timestamp": "2024-01-10T09:00:00Z"
+    },
+    {
+      "id": 2,
+      "author": "John Doe",
+      "Teacher": "Some Teacher",
+      "rating": 4.3,
+      "comment": "Great lecture today!",
+      "up-votes": 15,
+      "down-votes": 2,
+      "timestamp": "2024-01-10T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "author": "Alice Smith",
+      "Teacher": "Another Teacher",
+      "rating": 4.8,
+      "comment": "I have a question regarding the assignment.",
+      "up-votes": 8,
+      "down-votes": 0,
+      "timestamp": "2024-01-10T11:00:00Z"
+    },
+    {
+      "id": 4,
+      "author": "Bob Johnson",
+      "Teacher": "Math Teacher",
+      "rating": 5,
+      "comment": "Can anyone help me with this math problem?",
+      "up-votes": 6,
+      "down-votes": 1,
+      "timestamp": "2024-01-10T12:00:00Z"
+    },
+    {
+      "id": 5,
+      "author": "Eva Green",
+      "Teacher": "Science Teacher",
+      "rating": 4,
+      "comment": "I love experiments in class!",
+      "up-votes": 12,
+      "down-votes": 0,
+      "timestamp": "2024-01-10T13:00:00Z"
+    },
+    {
+      "id": 6,
+      "author": "Michael Brown",
+      "Teacher": "History Teacher",
+      "rating": 3,
+      "comment": "Today's topic was fascinating!",
+      "up-votes": 9,
+      "down-votes": 3,
+      "timestamp": "2024-01-10T14:00:00Z"
+    },
+    {
+      "id": 7,
+      "author": "Emily Rodriguez",
+      "Teacher": "English Teacher",
+      "rating": 4,
+      "comment": "I enjoyed the poetry session.",
+      "up-votes": 11,
+      "down-votes": 2,
+      "timestamp": "2024-01-10T15:00:00Z"
+    },
+    {
+      "id": 8,
+      "author": "Daniel Lee",
+      "Teacher": "Music Teacher",
+      "rating": 4,
+      "comment": "When is the next music performance?",
+      "up-votes": 7,
+      "down-votes": 1,
+      "timestamp": "2024-01-10T16:00:00Z"
+    },
+    {
+      "id": 9,
+      "author": "Sophia Martinez",
+      "Teacher": "Art Teacher",
+      "rating": 4,
+      "comment": "Learning new art techniques!",
+      "up-votes": 10,
+      "down-votes": 0,
+      "timestamp": "2024-01-10T17:00:00Z"
+    },
+    {
+      "id": 10,
+      "author": "David Wilson",
+      "Teacher": "Physics Teacher",
+      "rating": 4,
+      "comment": "Physics is mind-blowing!",
+      "up-votes": 13,
+      "down-votes": 1,
+      "timestamp": "2024-01-10T18:00:00Z"
+    }
+  ]
+}
+
+
